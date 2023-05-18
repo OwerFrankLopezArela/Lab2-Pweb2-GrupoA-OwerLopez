@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 05</title>
+
+    <script>
+        function crearTabla() {
+          var valores = parseInt(document.getElementById("valores").value);
+          var tablaHTML = "<table>";
+          for (var i = 1; i <= valores; i++) {
+            tablaHTML += "<tr><td>Valor " + i + ":</td><td><input type='number' id='valor" + i + "'></td></tr>";
+          }
+          tablaHTML += "</table>";
+          tablaHTML += "<button onclick='calcularSuma()'>Calcular Suma</button>";
+          document.getElementById("tabla").innerHTML = tablaHTML;
+        }
+    
+        function calcularSuma() {
+          var valores = parseInt(document.getElementById("valores").value); 
+          var suma = 0;
+          for (var i = 1; i <= valores; i++) {
+            var valor = parseFloat(document.getElementById("valor" + i).value);
+            suma += valor;
+          }
+          document.getElementById("resultado").innerHTML = "La suma de los valores ingresados es: " + suma;
+        }
+      </script>
+      
+</head>
+    <body>
+        <center>
+
+            <h1>Ejercicio 05</h1>
+            <h4>Escribir una página que permita calcular la suma de todos los valores de una tabla de valores 
+                dinámica. La idea es crear una página web con un formulario que te permita decir cuantos valores
+                tendrá la tabla, luego, al enviar el formulario la tabla se debe crear dinámicamente, junto 
+                con otro botón de envió para calcular la suma.</h4>
+
+            <form onsubmit="event.preventDefault(); crearTabla();">
+                <label for="valores">Cantidad de Valores de la tabla: </label><br>
+                <input type="number" id="valores" min="1" required><br>
+                <input type="submit" value="Crear">
+            </form>
+
+            <div id="tabla"></div>
+            <p id="resultado"></p>
+
+        </center>
+    </body>
+</html>
