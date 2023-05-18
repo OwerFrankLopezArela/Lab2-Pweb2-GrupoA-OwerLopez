@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 03</title>
+</head>
+    <body>
+        <center>
+            <h1>Ejercicio03</h1>
+            <h4>Escribir una página que muestre cuántos días faltan para el día de Arequipa!</h4>
+
+            <p id="diaDeArequipa"></p>
+            <p id="diasRestantes"></p>
+
+            <script>
+                let diadarequipa = new Date('2023-08-15');
+                let hoy = new Date();
+                var restante= Math.floor((diadarequipa - hoy)/(1000*60*60*24));
+                document.getElementById("diaDeArequipa").innerHTML="Dia de Arequipa "+diadarequipa;
+                document.getElementById("diasRestantes").innerHTML="Dias restantes: "+restante;
+            </script>
+        </center>
+    </body>
+</html>
