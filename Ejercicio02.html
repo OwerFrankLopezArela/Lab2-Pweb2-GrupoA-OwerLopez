@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 02</title>
+</head>
+    <body>
+        <center>
+        <h1>Ejercicio 02</h1>
+        <h4>Escriba una página web que reciba un texto y al presionar un botón muestre el 
+            mismo texto invertido en otra sección (div). Por ejemplo si se escribe “Hola”,
+            se mostraría como “aloH”.</h4>
+
+        <button onclick="invertir()"> INGRESE SU PALABRA QUE DESEA INVERTIR</button>
+
+        <p id="palabraIngresada"></p>
+        <p id="palabraInvertida"></p>
+
+        <script>
+            function invertir(){
+                palabra=prompt("Ingresa una palabra o frase");
+                invertida="";
+                for(i=palabra.length -1 ; i>=0;i--){
+                    invertida = invertida + palabra.charAt(i);
+                }
+            document.getElementById("palabraIngresada").innerHTML="Palabra inicial: "+palabra;
+            document.getElementById("palabraInvertida").innerHTML="Palabra invertida: "+invertida;
+            }
+        </script>
+
+        </center>
+    </body>
+</html>
